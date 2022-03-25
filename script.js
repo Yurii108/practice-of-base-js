@@ -1,51 +1,36 @@
 "use strict";
 
+const namber0films = +prompt('Сколько фильмов вы помотрели?', '');
 
-// let number = 5;
-// const leftBorder = 1;
+const personalMovieDV = {
+        count: namber0films,
+        movies: {},
+        actors: {},
+        genres: [],
+        pravet: false
+};
 
-// number = 10;
-// console.log(number);
+for (let i = 0; i < 2; i++) {
+        const a = prompt('Один из просмотренных ранее фильмов?', ''),
+              b = prompt('Насолько оцените его?', '');
+        
+        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+                personalMovieDV.movies[a] = b; 
+                console.log('done');
+        } else {
+                console.log('error');
+                i--;
+        } 
+}
 
-// let number = 5;
-// const leftBorder = 1;
+if (personalMovieDV.count < 10) {
+        console.log('Просмотренно довольно мало фильмов');
+} else if  (personalMovieDV.count >= 10 && personalMovieDV.count < 30) {
+        console.log('Вы класический зритель');
+} else if (personalMovieDV.count >= 30) {
+        console.log('Вы киноман');
+} else {
+        console.log('Произошла ошибка');
+}
 
-// number = 10;
-// console.log(number);
-
-// const obj = {
-//     name: 'Yurii',
-//     age: 27,
-//     isMerried: false
-// };
-
-// console.log(obj .age);
-
-// let arr = ['car.jpg', 'bycicle.png', 8,];
-// console.log(arr[1]);
-
-// const answer = prompt('Вам есть 18 лет?', '');
-// console.log(answer);
-
-// const answers = [];
-
-// answers[0] = prompt("Ваше имя?", "");
-// answers[1] = prompt("Ваше Фамилия?", "");
-// answers[2] = prompt("Сколько вам лет?", "");
-
-// document.write(answers);
-
-// const category = 'toys';
-
-// console.log(`https://youtube.com/${category}/8`);
-
-// console.log(4 + +'8');
-
-const isChecked = true,
-        isClose = false;
-
-console.log(isChecked || isClose);
-
-let namber = 10;
-
-let first = 20; 
+console.log(personalMovieDV);
