@@ -34,3 +34,12 @@ if (personalMovieDV.count < 10) {
 }
 
 console.log(personalMovieDV);
+const a = prompt('Один из просмотренных ранее фильмов?', ''),
+      b = prompt('Насолько оцените его?', ''),
+      c = prompt('Один из просмотренных ранее фильмов?', ''),
+      d = prompt('Насолько оцените его?', '');
+
+personalMovieDV.movies[a] = b;
+personalMovieDV.movies[c] = d;
+
+console.log(personalMovieDV);
