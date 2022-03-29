@@ -49,3 +49,17 @@
 //         }
 // }
 // while (i < 2);
+
+// const taxt = 'Hello World';
+
+// console.log(taxt.slice(-7, -2));
+
+// const a = prompt('Один из просмотренных ранее фильмов?', ''),
+//       b = prompt('Насолько оцените его?', ''),
+//       c = prompt('Один из просмотренных ранее фильмов?', ''),
+//       d = prompt('Насолько оцените его?', '');
+
+// personalMovieDV.movies[a] = b;
+// personalMovieDV.movies[c] = d;
+        
+// console.log(personalMovieDV);
