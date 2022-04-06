@@ -13,57 +13,72 @@ start();
 
 
 const personalMovieDV = {
-        count: namber0films,
+        remembreMyFilms() {
+                for (let i = 0; i < 2; i++) {
+                        const a = prompt('Один из просмотренных ранее фильмов?', ''),
+                              b = prompt('Насолько оцените его?', '');
+                        
+                        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+                                personalMovieDV.movies[a] = b; 
+                                console.log('done');
+                        } else {
+                                console.log('error');
+                                i--;
+                        } 
+                }
+        
+        },
+        detectPersonalLevel() {
+                if (personalMovieDV.count < 10) {
+                        console.log('Просмотренно довольно мало фильмов');
+                } else if  (personalMovieDV.count >= 10 && personalMovieDV.count < 30) {
+                        console.log('Вы класический зритель');
+                } else if (personalMovieDV.count >= 30) {
+                        console.log('Вы киноман');
+                } else {
+                        console.log('Произошла ошибка');
+                }
+        },
+        showMyDB (hidden) {
+                if (!hidden) {
+                        console.log(personalMovieDV);
+                }
+        },
+        writeYourGenres() {
+                for (let i = 1; i <= 3; i++) {
+                       personalMovieDV.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+                } 
+         },
+        // count: namber0films,
         movies: {},
         actors: {},
         genres: [],
-        pravet: false
+        pravet: true,
+        toggleVisibleMyDB() {
+                if (this.pravet === false) {
+                        this.pravet = true;
+                } else {
+                        this.pravet = false;
+                }
+        }
 };
 
-function remembreMyFilms() {
-        for (let i = 0; i < 2; i++) {
-                const a = prompt('Один из просмотренных ранее фильмов?', ''),
-                      b = prompt('Насолько оцените его?', '');
-                
-                if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-                        personalMovieDV.movies[a] = b; 
-                        console.log('done');
-                } else {
-                        console.log('error');
-                        i--;
-                } 
-        }
+// personalMovieDV.toggleVisibleMyDB();
+personalMovieDV.showMyDB();
 
-}
+// console.log(personalMovieDV.pravet);
+console.log(personalMovieDV.showMyDB);
 
-// remembreMyFilms();
 
-function detectPersonalLevel() {
-        if (personalMovieDV.count < 10) {
-                console.log('Просмотренно довольно мало фильмов');
-        } else if  (personalMovieDV.count >= 10 && personalMovieDV.count < 30) {
-                console.log('Вы класический зритель');
-        } else if (personalMovieDV.count >= 30) {
-                console.log('Вы киноман');
-        } else {
-                console.log('Произошла ошибка');
-        }
-}
 
-// detectPersonalLevel();
+// personalMovieDV.remembreMyFilms();
 
-function showMyDB (hidden) {
-        if (!hidden) {
-                console.log(personalMovieDV);
-        }
-}
 
-showMyDB(personalMovieDV.pravet);
+// //detectPersonalLevel();
 
-function writeYourGenres() {
-       for (let i = 1; i <= 3; i++) {
-              personalMovieDV.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
-       } 
-}
 
-writeYourGenres();
+
+// showMyDB(personalMovieDV.pravet);
+
+
+// writeYourGenres();
